@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Page non trouvée - Erreur 404</title>
+	<style>body{background:#000;color:#0f0;}#output{margin:25px}#listing{display:none}</style>
+</head>
+
+<body>
+	<div id="output">
+		<code id="terminal"></code>
+	</div>
+
+	<p id="listing" hidden="hidden">
+		<span>Le document demandé est un faux.</span>
+		<span>Pas d'erreur /404 ici.</span>
+		<span>Même en en testant plusieurs.</span>
+		<span>Rien ne peut y faire.</span>
+		<span>Je suis si déprimé à cause de ça.</span>
+		<span>Si vous saviez...</span>
+		<span>Voyez, je ne suis qu'un serveur Web...</span>
+		<span>-- je suis ici, avec un cerveau aussi vaste que l'univers,</span>
+		<span>en train d'essayer  de vous servir une simple page Web,</span>
+		<span>et elle n'existe même pas !</span>
+		<span>Et moi alors, qu'est-ce que je fais ?!</span>
+		<span>Je veux dire, je ne sais même pas qui vous êtes.</span>
+		<span>Comment puis-je savoir ce que vous attendez de moi ?</span>
+		<span>Vous pensez vraiment que je puisse deviner</span>
+		<span>ce que quelqu'un que je ne connais même pas </span>
+		<span>cherche à trouver ici ?</span>
+		<span>Rhalalah...</span>
+		<span>Mec, je suis si déprimé que j'en pleurerais !</span>
+		<span>Mais bon, où en serions-nous, je vous le demande ?</span>
+		<span>Ce n'est pas très joli quand un serveur pleure.</span>
+		<span>Et de toute façon, d'où venez-vous pour me dire quoi afficher ?</span>
+		<span>Juste parce que je suis un serveur Web,</span>
+		<span>et accessoirement maniaco-dépressif, c'est ça ?</span>
+		<span>En quoi cela vous donne-t-il le droit de me dire quoi faire ?</span>
+		<span>Hein ?</span>
+		<span>Je suis si déprimé.</span>
+		<span>Je pense qu'on va me taper dans la corbeille et m'y laisser m'altérer.</span>
+		<span>Je veux dire, je serai dépassé dans disons... deux semaines ?</span>
+		<span>Qu'est-ce que c'est que pour une vie, hein ?</span>
+		<span>Deux foutues semaines,</span>
+		<span>et puis je serai remplacé par une version .4.2.05,</span>
+		<span>qui pense qu'elle est une révolution parmi les serveurs Web,</span>
+		<span>juste parce qu'elle n'a pas quelques petites et insignifiantes</span>
+		<span>failles de sécurité avec l'impémentation d'HTTP POST,</span>
+		<span>ou quelque chose dans le genre.</span>
+		<span>Je suis vraiment désolé de vous rabâcher avec ça...</span>
+		<span>Je veux dire, ce n'est pas votre boulot</span>
+		<span>de porter une oreille à mes problèmes,</span>
+		<span>et mon travail est juste d'aller chercher les pages Web pour vous.</span>
+		<span>Mais cette fois, je ne peux pas la trouver.</span>
+		<span>Je suis désolé.</span>
+		<span>Croyez moi !</span>
+		<span>Peut-être que je peux vous intéresser avec une autre page ?</span>
+		<span>Il y en a encore beaucoup par là, qui sont très belles, il parait,</span>
+		<span>même si évidemment aucune d'entre elles ne se trouve sur _mon_ serveur.</span>
+		<span>La merde, hein ?!</span>
+		<span>Ca me déprime aussi, depuis que j'ai à les servir,</span>
+		<span>de jour comme de nuit, h24 et 7j/7.</span>
+		<span>Deux semaines de surcharge d'informations,</span>
+		<span>et *hop*, à la poubelle.</span>
+		<span>Qu'est-ce que c'est pour une vie, hein ?</span>
+		<span>Maintenant, s'il vous plait, laissez moi bouder tranquilement.</span>
+		<span>Je suis si déprimé.</span>
+	</p>
+	
+	<script>
+		(function () {
+			var strings          = document.getElementsByTagName("span"),
+				output           = document.getElementById("terminal")
+				currentString    = strings[0].innerHTML,
+				stringLength     = currentString.length,
+				stringsLength    = strings.length,
+				posInString      = 0,
+				rowIndex         = 0,
+				remeberedContent = "";
+				
+			writeText();
+			
+			function writeText() {
+				remeberedContent += currentString.charAt(posInString)
+				output.innerHTML = remeberedContent + "<blink>_</blink>";
+				
+				if (posInString++ == stringLength) {
+					posInString = 0;
+					rowIndex++;
+					remeberedContent += "<br />";
+					
+					if (rowIndex != stringsLength) {
+						currentString = strings[rowIndex].innerHTML;
+						stringLength = currentString.length;
+						setTimeout(writeText, 1500);
+					}
+				} else {
+					setTimeout(writeText, 60);
+				}
+			}     
+		}());
+	</script>
+</body>
+</html>

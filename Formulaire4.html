@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Choix multiple</title>
+</head>
+<body>
+	<ol class="left">
+		<li>
+			<input type="checkbox">A propos d'un tuto
+			</li>
+			<li>
+			<input type="checkbox" >Merci
+		</li>
+		<li>
+			<input type="checkbox">Cours de javascript
+			</li>
+			<li>
+			<input type="checkbox" >c'est super 
+		</li>
+		<li>
+			<input type="checkbox">La ligue des chanpions
+			</li>
+			<li>
+			<input type="checkbox" >Paris 15
+		</li>
+	</ol>
+		<p class="center">
+
+			<button type="button" id="button-check">Cocher</button>
+			<button type="button" id="button-uncheck">Décocher tout</button>
+		</p>
+
+
+		<script type="text/javascript">
+
+
+			function checkOrUncheckAll(status) {
+    // On récupère la liste de tous les inputs de type checkbox enfants de li, eux-mêmes enfants de ol et de #output
+    var checkboxes = document.querySelectorAll("#output > ol > li > input[type='checkbox']");
+
+    for (var i=0, c=checkboxes.length; i<c; i++) {
+        checkboxes[i].checked = status;
+    }
+}
+			
+var buttonCheck   = document.getElementById('button-check');
+var buttonUncheck = document.getElementById('button-uncheck');
+	
+if (buttonCheck && buttonUncheck) {
+    buttonCheck.addEventListener('click', function() {
+        checkOrUncheckAll(true)
+    }, false);
+	
+    buttonUncheck.addEventListener('click', function() {
+        checkOrUncheckAll(false)
+    }, false);
+}
+
+
+
+		</script>
+		
+
+
+		
+
+
+
+
+		
+
+
+
+
+
+
+
+	
+
+</body>
+</html>

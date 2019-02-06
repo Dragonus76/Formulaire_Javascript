@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Formulaire_Javascrpit</title>
+</head>
+<body>
+
+	<div>
+
+	<textarea> Et voila du texte ! </textarea>
+
+</div><br/>
+
+	<input id="text" type="text"  size="60" value="Vous n'avez pas le focus"/> 
+
+	<script type="text/javascript">
+
+
+
+		var text = document.getElementById('text');
+
+		text.addEventListener('focus',function(e){
+
+			e.target.value = "Vous avez le focus !";
+		});
+
+
+		text.addEventListener('blur',function(e){
+
+			e.target.value = 	"Vous n'avez pas le focus";
+
+		});
+		
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

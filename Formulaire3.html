@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulaire_Javascript</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<form id="myForm">
+
+
+		<input type="text" value="Entrez un texte"/>
+
+		<br/><br/>
+
+		<input type="submit" value="submit !"/>
+		<input type="reset" value="Reset!"/>
+		<br/>
+		<br/>
+		<input id="text" type="text" value="Entrez un texte"/>
+		<br/><br/>
+
+		<input type="button" value="Donner le focus"
+		onclick="document.getElementById('text').focus();"/><br/>
+		<input type="button" value="Retirer le focus" onclick="document.getElementById('text').blur();"/>
+
+		<br/>
+		<br/>
+
+		<input id="text" type="text" value="Entrez un texte" />
+
+		<br/><br/>
+
+		<input type="button" value="Selectionner le texte" onclick="document.getElementById('text').select();"/>
+
+
+	</form>
+
+</body>
+</html>

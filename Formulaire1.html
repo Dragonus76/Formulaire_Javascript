@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulaire_Javascript</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+		<label><input type="radio" name="check" value="1"/> Case n°1</label><br/>
+		<label><input type="radio" name="check" value="2"/> Case n°2</label><br/>													
+		<label><input type="radio" name="check" value="3"/> Case n°3</label><br/>						
+		<label><input type="radio" name="check" value="4"/> Case n°4</label><br/>
+
+		<input type="button"  value ="Afficher la case cochée" onclick="check();"/>
+
+		<br/>
+		<br/>
+
+		<select id="list">
+
+		<option>Sélectionnez votre sexe</option>
+		<option>Homme</option>
+		<option>Femme</option>
+
+	</select>
+
+
+		<script type="text/javascript">
+
+			function check () {
+				var inputs = document.querySelectorAll('input[type=radio]:checked'),
+				inputsLength = inputs.length;
+
+				for(var i = 0; i < inputsLength; i++){
+
+					alert('La case cochée est la n°' + inputs[i].value);
+				}
+				// body...
+			}
+
+
+			var list = document.getElementById('list');
+
+			list.addEventListener('change', function(){
+
+				// On affiche le contenu de l'élément <option> ciblé par la propriété selectedIndex
+
+				alert(list.options[list.selectedIndex].innerHTML);
+			});
+
+</script>
+
+</body>
+</html>
